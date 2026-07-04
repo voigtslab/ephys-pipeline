@@ -3,7 +3,7 @@ set -euo pipefail
 
 usage() {
   cat <<EOF
-Usage: $0 <day_directory> <large|box|minimaze>
+Usage: $0 <day_directory> <large|box|minimaze|split>
 EOF
 }
 
@@ -30,15 +30,19 @@ case "$MAZE" in
     INSTANCE_MODEL="/groups/voigts/voigtslab/animal_tracking/sleap/models/251205_164053.centered_instance.n=2228"
     ;;
   box)
-    CENTROID_MODEL="/groups/voigts/voigtslab/animal_tracking/sleap/models/260305_124156.centroid.n=169"
-    INSTANCE_MODEL="/groups/voigts/voigtslab/animal_tracking/sleap/models/260305_130544.centered_instance.n=169"
+    CENTROID_MODEL="/groups/voigts/voigtslab/animal_tracking/sleap/models/box260305_124156.centroid.n=169"
+    INSTANCE_MODEL="/groups/voigts/voigtslab/animal_tracking/sleap/models/box260305_130544.centered_instance.n=169"
     ;;
   minimaze)
     CENTROID_MODEL="/groups/voigts/voigtslab/animal_tracking/sleap/models/minimaze260309_152049.centroid.n=272"
     INSTANCE_MODEL="/groups/voigts/voigtslab/animal_tracking/sleap/models/minimaze260309_155101.centered_instance.n=272"
     ;;
+  split)
+    CENTROID_MODEL="/groups/voigts/voigtslab/animal_tracking/sleap/models/split_large260703_182842.centroid.n=1122"
+    INSTANCE_MODEL="/groups/voigts/voigtslab/animal_tracking/sleap/models/split_large260703_191337.centered_instance.n=1122"
+    ;;
   *)
-    echo "ERROR: Invalid maze '$MAZE'. Use one of: large, box, minimaze." >&2
+    echo "ERROR: Invalid maze '$MAZE'. Use one of: large, box, minimaze, split." >&2
     usage >&2
     exit 2
     ;;
