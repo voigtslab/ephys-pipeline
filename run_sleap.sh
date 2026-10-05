@@ -38,8 +38,10 @@ case "$MAZE" in
     INSTANCE_MODEL="/groups/voigts/voigtslab/animal_tracking/sleap/models/minimaze260309_155101.centered_instance.n=272"
     ;;
   split)
-    CENTROID_MODEL="/groups/voigts/voigtslab/animal_tracking/sleap/models/split_large260703_182842.centroid.n=1122"
-    INSTANCE_MODEL="/groups/voigts/voigtslab/animal_tracking/sleap/models/split_large260703_191337.centered_instance.n=1122"
+    # CENTROID_MODEL="/groups/voigts/voigtslab/animal_tracking/sleap/models/split_large260703_182842.centroid.n=1122"
+    # INSTANCE_MODEL="/groups/voigts/voigtslab/animal_tracking/sleap/models/split_large260703_191337.centered_instance.n=1122"
+    CENTROID_MODEL="/groups/voigts/voigtslab/animal_tracking/sleap/models/split_maze260728_202734.centroid.n=1176"
+    INSTANCE_MODEL="/groups/voigts/voigtslab/animal_tracking/sleap/models/split_maze260728_211556.centered_instance.n=1176"    
     ;;
   *)
     echo "ERROR: Invalid maze '$MAZE'. Use one of: large, box, minimaze, split." >&2
