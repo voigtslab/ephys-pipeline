@@ -46,6 +46,7 @@ def load_probe(
     
     active_channels_mask = find_active_channels(probe_dict)
     probe = probe_dict['probes'][0]  # get the first probe
+    probe.pop('contact_annotations', None)   # handle new style probe interface json with survey data and contact annotations
 
     # First filter by active channels
     for key in ['contact_positions', 'contact_plane_axes', 'contact_shapes', 
