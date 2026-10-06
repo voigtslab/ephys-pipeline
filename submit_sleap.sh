@@ -3,7 +3,7 @@ set -euo pipefail
 
 usage() {
   cat <<EOF
-Usage: $0 <day_directory> <large|box|minimaze> [<large|box|minimaze> ...]
+Usage: $0 <day_directory> <large|box|minimaze|split> [<large|box|minimaze|split> ...]
 Example: $0 /data/2025_12_02_square_arena_02 large box
 EOF
 }
@@ -28,9 +28,9 @@ fi
 
 for MAZE in "${MAZES[@]}"; do
   case "$MAZE" in
-    large|box|minimaze) ;;
+    large|box|minimaze|split) ;;
     *)
-      echo "ERROR: Invalid maze '$MAZE'. Use one of: large, box, minimaze." >&2
+      echo "ERROR: Invalid maze '$MAZE'. Use one of: large, box, minimaze, split." >&2
       exit 2
       ;;
   esac
